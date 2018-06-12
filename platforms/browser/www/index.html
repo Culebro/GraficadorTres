@@ -33,7 +33,13 @@
         // device APIs are available
         //
         function onDeviceReady() {
-            var ref = window.open('http://matrix.com.mx/graficas', '_blank', 'location=yes');
+            var ref = window.open('http://matrix.com.mx/graficas', '_blank', 'location=no');
+
+            ref.addEventListener('loadstart', cargaInicial)
+        }
+
+        function cargaInicial() {
+            $('#status-message').text("Se está cargando el contenido, por favor espere.");
         }
     </script>
     <title>Hello World</title>
