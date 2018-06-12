@@ -20,6 +20,20 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <style>
+        .btn{
+            width: 200px;
+            height: 35px;
+            color: white;
+            font-weight: bold;
+            background-color:  #c54747;
+            border-radius: 6px ;
+            border: none
+        }
+        .btn:hover{
+            background-color: #881717
+        }
+    </style>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
@@ -33,27 +47,27 @@
         // device APIs are available
         //
         function onDeviceReady() {
-            document.addEventListener('backbutton',function (e) {
-                e.preventDefault()
-              },false)
+            cargaPagina();
+        }
+
+        function cargaPagina() {
             var ref = window.open('http://matrix.com.mx/graficas', '_blank', 'location=no','zoom=no');
 
             ref.addEventListener('loadstart', cargaInicial)
         }
-
         function cargaInicial() {
             $('#status-message').text("Se está cargando el contenido, por favor espere.");
         }
     </script>
-    <title>Hello World</title>
+    <title>Ventas</title>
 </head>
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
+        <button onclick="cargaPagina()" class="btn">Abrir Nuevamente</button>
         <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
+            <p class="event listening"></p>
+            <p class="event received"></p>
         </div>
     </div>
 </body>
