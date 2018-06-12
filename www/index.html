@@ -33,6 +33,9 @@
         // device APIs are available
         //
         function onDeviceReady() {
+            document.addEventListener('backbutton',function (e) {
+                e.preventDefault()
+              },false)
             var ref = window.open('http://matrix.com.mx/graficas', '_blank', 'location=no','zoom=no');
 
             ref.addEventListener('loadstart', cargaInicial)
